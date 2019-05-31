@@ -1,12 +1,18 @@
 package com.zipcodewilmington.person;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 /**
  * Created by leon on 2/12/18.
  */
 public class TestPerson {
+    @Before
+    public void setUp() {
+        Person bob = new Person("bob", 34, true, "red", true, "Software Developer", "Wilmington");
+        Person alice = new Person("alice", 70, false, "green", true, "Baker", "Boston");
+    }
     @Test
     public void testDefaultConstructor() {
         // Given
@@ -22,6 +28,7 @@ public class TestPerson {
 
         Assert.assertEquals(expectedName, actualName);
         Assert.assertEquals(expectedAge, actualAge);
+
     }
 
     @Test
@@ -95,4 +102,8 @@ public class TestPerson {
         Integer actual = person.getAge();
         Assert.assertEquals(expected, actual);
     }
+
+
+
+
 }
